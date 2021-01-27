@@ -222,3 +222,54 @@ function transformToArrays() {
     console.log(names,age,passed)
 }
 transformToArrays();
+// task 5
+/* Based on existing object:
+
+Create the other object which should inherit data from existing object. 
+Then console.log age by accessing the newly created object. */
+
+var person = {
+	name: "Jack",
+	age: 32,
+	married: true
+}
+
+var newPerson = Object.create(person);
+console.log(newPerson.age)
+
+
+//TASK 6:
+
+/* Based on existing object:
+
+Create a method which, when called, should console.log name and age of existing object. */
+
+var person = {
+	name: "Mike",
+	age: 28,
+    married: true,
+    findNameAndAge:function (){
+        return this.name + " " + this.age;
+    }
+};
+console.log(person.findNameAndAge())
+
+
+//TASK 7:
+/* Based on existing object:
+
+var person = {};
+
+Create a method which should create name, age and married properties in existing object, based on parameters passed in method.
+*/
+
+person.fillObject = function(){
+
+var person = {
+  fillObject: function(name,age,married) {
+    console.log(person.name,person.age,person.married)
+  }
+}
+}
+person.fillObject("Mike",36,true);
+console.log(person)
