@@ -19,12 +19,12 @@ var person = {
     }
 ],
 oldest:function() {
-    var najstarijeDete=this.children[0].age;
+    var oldestChild=this.children[0].age;
     var max=0;
     var children1 = [];
     for (var i=0;i<this.children.length;i++) {
-        if (najstarijeDete<this.children[i].age){
-            najstarijeDete=this.children[i].age
+        if (oldestChild<this.children[i].age){
+            oldestChild=this.children[i].age
             max=i;
         }
     }
@@ -263,13 +263,15 @@ var person = {};
 Create a method which should create name, age and married properties in existing object, based on parameters passed in method.
 */
 
-person.fillObject = function(){
 
-var person = {
-  fillObject: function(name,age,married) {
-    console.log(person.name,person.age,person.married)
-  }
-}
-}
-person.fillObject("Mike",36,true);
-console.log(person)
+var fillObject = {};
+
+fillObject.data = function(a,b,c){
+
+this.name = a;
+this.age = b;
+this.married = c;
+};
+fillObject.data('John',36,true)
+
+console.log(fillObject)
